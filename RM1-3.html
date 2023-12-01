@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>RM1 Campaign</title>
+
+    <style>
+        .container {
+            display: grid;
+            gap: 10px;
+            grid-template-areas:
+                "head head head head"
+                "navi navi navi navi"
+                "content content content side"
+                "foot foot foot foot"
+            ;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+        }
+
+        .image-container {
+            position: relative;
+            display: inline-block;
+        }
+
+        .image-container img {
+            display: block;
+            max-width: 100%;
+        }
+
+        .text-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 10px;
+        }
+
+        .text-overlay p {
+            margin: 0;
+            font-size: 55px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-weight: lighter;
+            color: purple;
+        }
+
+        body {
+            width: 90%;
+            max-width: 900px;
+            margin: 2em auto;
+            font: 0.9em;
+            font-family: 'Times New Roman', Times, serif;
+            background: radial-gradient(circle, #c64b8c, #8d4585);
+            text-align: center;
+        }
+
+        aside {
+            grid-area: side;
+            color: beige;
+            background-color: #373737;
+        }
+
+
+        header {
+            grid-area: head;
+            position: sticky;
+            text-align: center;
+            color: beige;
+        }
+
+        form {
+            padding: 10px;
+            padding-bottom: 45px;
+            margin: 0 auto;
+            grid-area: content;
+            border-radius: 8px;
+            height: 350px;
+            width: 450px;
+            position: relative;
+            text-align: justify;
+            background-color: #c5c6d0;
+        }
+
+        .button {
+            display: inline-block;
+            text-decoration: none;
+            color: #120817;
+            background-color: #612a79;
+            border-radius: 0.25rem;
+        }
+
+        .button:hover span {
+            background-color: #c9a3d9;
+        }
+
+        .button:active span {
+            translate: none;
+        }
+
+        .button span {
+            display: inherit;
+            border-radius: inherit;
+            background-color: #d6b4e4;
+            padding: 1rem 2rem;
+            translate: 0.25rem -0.25rem;
+            border: 2px solid #612a79;
+            transition: translate 100ms cubic-bezier(0.175, 0.885, 0.32. 1.275),
+                background-color 250ms;
+        }
+
+        footer {
+            grid-area: foot;
+            color: beige;
+        }
+
+        nav {
+            grid-area: navi;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="image-container">
+        <img src="1357.jpg" alt="banner">
+        <div class="text-overlay">
+            <p>RM1 Campaign</p>
+        </div>
+    </div>
+
+    <header>
+        <br>
+        <img src="iiumlogo.png" alt="iium logo" height="100" width="100" />
+        <p>
+        <h2>Let your contributions be perpetual for the pleasure of Allah S.W.T.</h2>
+        </p>
+    </header>
+
+    <aside>
+        <p><br>
+            "The example of those who spend their <br>
+            wealth in the way of Allah is like a <br>
+            seed [of a grain] which grows seven <br>
+            spikes; in each spike is a hundred <br>
+            grains. And Allah multiplies [His reward] <br>
+            for whom He wills. And Allah is <br>
+            all-Encompassing and Knowing<br>
+            Al Baqarah : 261"<br><br>
+        </p>
+    </aside>
+
+    <form id="myForm" action="form.php" method="POST">
+        <fieldset>
+            <legend>RM1 Campaign</legend>
+            <p>
+            <div>
+                <label for="name">Name: <span aria-label="required">*</span></label>
+                <input id="name" type="text" name="RM1" required />
+            </div>
+            </p>
+            <p>
+            <div>
+                <label for="staffno">Staff No: <span aria-label="required">*</span></label>
+                <input id="staffno" type="text" name="RM1" required />
+            </div>
+            </p>
+            <p>
+            <div>
+                <label for="type">K/C/D/I/O: <span aria-label="required">*</span></label>
+                <input id="type" type="text" name="type" required />
+            </div>
+            </p>
+            <p>
+            <div>
+                <label for="contactno">Contact No: <span aria-label="required">*</span></label>
+                <input id="contactno" type="text" name="contactno" required />
+            </div>
+            </p>
+            <p>
+            <div>
+                <label for="email">Email: <span aria-label="required">*</span></label>
+                <input id="email" type="text" name="email" required />
+            </div>
+            </p>
+            <p>
+            <div>
+                <label for="amt">Amount to be Deducted (RM): <span aria-label="required">*</span></label>
+                <input id="amt" type="text" name="amt" required />
+            </div>
+            </p>
+            <p>
+            <div>
+                <input type="radio" name="choice" value="option1" id="option1">
+                <label for="option1">Own</label><br>
+                <input type="radio" name="choice" value="option2" id="option2">
+                <label for="option2">For Kulliyyah of </label>
+                <div id="textEntry" style="display: none;">
+                    <label for="textInput"></label>
+                    <input type="text" id="textInput" name="textEntry">
+                </div>
+                <div style="text-align: right;">
+                <a href="#" class="button">
+                    <span>Submit</span>
+                </a>
+                </p>
+
+        </fieldset>
+
+    </form>
+
+    <footer>
+        <p>
+            <br>
+            IIUM ENDOWNMENT FUND <br>
+            Level 3, Rectory <br>
+            International Islamic University Malaysia <br>
+            P.O. Box 10 <br>
+            50728 Kuala Lumpur <br>
+            Tel: 03 6196 4268 <br>
+            Email: ief@iium.edu.my <br>
+            Website: www.iium.edu.my/ief<br>
+            Facebook: www.facebook.com/ief.official/<br>
+        </p>
+    </footer>
+    <script>
+
+        const option1 = document.getElementById('option1');
+        const option2 = document.getElementById('option2');
+        const textEntry = document.getElementById('textEntry');
+
+        function toggleTextInput() {
+            if (option2.checked) {
+                textEntry.style.display = 'block';
+            } else {
+                textEntry.style.display = 'none';
+            }
+        }
+
+        option1.addEventListener('change', toggleTextInput);
+        option2.addEventListener('change', toggleTextInput);
+
+        document.getElementById('myForm').addEventListener('submit', function (event) {
+            event.preventDefault(); // Prevents the form from submitting in the default way
+
+            // Get form data
+            let formData = new FormData(this);
+
+            // You can now send the formData to a server using fetch or XMLHttpRequest
+            // For example, using fetch to send the data to a server endpoint
+            fetch('http://127.0.0.1:5500/', {
+                method: 'POST',
+                body: formData
+            })
+                .then(response => {
+                    if (response.ok) {
+                        // Handle successful form submission
+                        console.log('Form submitted successfully!');
+                    } else {
+                        // Handle errors if submission fails
+                        console.error('Form submission failed.');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+        });
+
+    </script>
+
+</body>
+
+
+</html>
